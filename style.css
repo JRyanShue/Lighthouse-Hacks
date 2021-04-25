@@ -1,8 +1,9 @@
 .text_box{
-  margin-top: 5%;
+  margin-top: 2.5%;
   background-color: powderblue;
   overflow: visible;
   margin-bottom: 200%;
+  border-radius: 4%/10%;
 }
 .left_column{
   margin-left: -2%;
@@ -70,8 +71,6 @@ input:focus {
   background-color: #F2BA66;
   border-radius: 11%/30%;
 }
-.header{
-}
 .top_image{
   height: 131px;
   margin-top: -3%;
@@ -83,14 +82,16 @@ input:focus {
   margin-left: 84.7%;
   z-index: 94;
   width: 7.5%;
+  margin-top: 0.9%;
 }
 .plus_sign{
   z-index: 95;
   display: inline-block;
+  margin-top: -0.11%;
   position: absolute;
-  margin-top: -0.1%;
 }
 .new_post_text{
   display: inline-block;
   margin-left: 15%;
+  z-index: 94;
 }
