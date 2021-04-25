@@ -1,0 +1,11 @@
+1. sign in button
+2. Form -> firebase hosting
+3. JS + Firebase for creating elements from posting
+4. New post button
+5. Integrate together
+----------------------10:30
+6. Build LSTM
+7. Integrate LSTM
+8. Scale up web app
+---------------------4:00
+9. Build video

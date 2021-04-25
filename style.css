@@ -1,0 +1,60 @@
+.text_box{
+  margin-top: 5%;
+  background-color: powderblue;
+  overflow: visible;
+  margin-bottom: 200%;
+}
+.left_column{
+  margin-left: -2%;
+}
+.right_column{
+  margin-left: 2%;
+}
+a{
+  color: black;
+}
+a:hover{
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.menu{
+  top: 0;
+  position: sticky;
+  z-index: 99;
+  padding-bottom: -1%;
+}
+.menu_break{
+  border-style: solid;
+  border-width: 1%;
+  border-color: black;
+  margin-top: 4.3%;
+}
+.menu_buttons{
+  text-align: center;
+}
+.menu_1{
+  background-color: #040CEE;
+}
+.menu_2{
+  background-color: #2D34EF;
+}
+.menu_3{
+  background-color: #3A40EF;
+}
+.menu_4{
+  background-color: #484DEF;
+}
+.sender{
+  margin-top: 5px;
+  margin-bottom: -3%;
+}
+.reply{
+  margin-left: 73%;
+  border-style: hidden;
+  margin-bottom: 3%;
+  padding-bottom: 2%;
+}
+input:focus {
+    outline:none;
+}
