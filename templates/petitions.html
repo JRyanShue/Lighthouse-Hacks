@@ -20,28 +20,7 @@
 <!--        </div>-->
 <!--    </div>-->
 
-    <form action="" method="post">
-        <p>
-<!--            <div class="FormTextContainer">-->
-<!--                <div class="FormText">-->
-<!--                    <label for="review">Enter in your written review (No more than 50 words):</label>-->
-<!--                    <input type="text" name="review">-->
-<!--                </div>-->
-<!--            </div>-->
 
-        </p>
-        <br>
-        <br>
-        <p>
-            <div class="FormButtonContainer">
-                <div class="stylebutton">
-                    <input type="submit">
-                </div>
-
-            </div>
-
-        </p>
-    </form>
 
 <!--    load in ajax and define button actions-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -82,22 +61,26 @@
 
 <!--  button for creating petition, serves up form page when clicked  -->
     <form>
-        <a href="{{ url_for('sample') }}">Create a petition</a>
+        <a href="{{ url_for('petition_form') }}">Create a petition</a>
 <!--        <button class='btn btn-default'></button>-->
     </form>
 
-    //button
-    <div class='container'>
-        <h3>Test</h3>
-            <form>
-                <a href=# id=test>Post a petition</a>
-            </form>
-<!--        <button class='btn btn-default'></button>-->
+<!--    <div class='container'>-->
+<!--        <h3>Test</h3>-->
+<!--            <form>-->
+<!--                <a href=# id=test>Post a petition</a>-->
+<!--            </form>-->
+<!--&lt;!&ndash;        <button class='btn btn-default'></button>&ndash;&gt;-->
 
-    </div>
+<!--    </div>-->
+
 
     {% block content %}
     {% endblock %}
+
+    {% for l in data %}
+        {{l}}
+    {% endfor %}
 
     <!--  Firebase initialization  -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->

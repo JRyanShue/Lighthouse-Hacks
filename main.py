@@ -7,6 +7,8 @@ from flask import request
 from flask import redirect
 from flask import url_for
 
+import time
+
 import pyrebase
 
 # initialization
@@ -26,9 +28,9 @@ firebase = pyrebase.initialize_app(config)
 db = firebase.database()
 
 # db.child("names").child("name").push({"name": "ryan"})
-db.child("data").child("petitions").update({"name": "Help Zoe"})
-users = db.child("data").child("petitions").get()
-print(users.val())
+# db.child("data").child("petitions").update({"name": "Help Zoe"})
+# users = db.child("data").child("petitions").get()
+# print(users.val())
 
 app = Flask(__name__)
 
@@ -50,17 +52,48 @@ app = Flask(__name__)
 ButtonPressed = 0
 
 
-@app.route('/sample', methods=["GET", "POST"])
-def sample():
+@app.route('/petition_form', methods=["GET", "POST"])
+def petition_form():
     print("yes")
+    message = ''
+    if request.method == 'POST':
+        name = request.form.get('name')  # access data from form
+        author = request.form.get('author')
+        link = request.form.get('link')
+        content = request.form.get('content')
+        timestamp = time.ctime(time.time())
+
+        if name and author and link and content:
+            # push to firebase
+            db.child("data").child("petitions").push({"Timestamp": timestamp, "Petition": name, "Author": author, "Link": link, "Content": content})
+
+            message = "Petition created!"
+        else:
+            if not name:
+                message += "Please enter a petition name."
+            if not author:
+                message += "\nPlease enter an author name."
+            if not link:
+                message += "\nPlease enter a link to your petition."
+            if not content:
+                message += "\nPlease enter a petition description."
+
+        print("yessir")
+        print("name:", name)
+        print("author:", author)
+        print("link:", link)
+        print("content:", content)
+        print(message)
     # return button()
-    return render_template("sample.html")
+    return render_template("petition_form.html", message=message)
 
 
-@app.route('/button', methods=["GET", "POST"])
-def button():
+@app.route('/home', methods=["GET", "POST"])
+def home():
     # sample()
-    return render_template("petitions.html")
+    all_petitions = db.child("data").child("petitions").get()
+    petitions = all_petitions.val()
+    return render_template("petitions.html", data=petitions.values())  # pass JSON of petition data to the HTML page
 
 
 def move_forward():
