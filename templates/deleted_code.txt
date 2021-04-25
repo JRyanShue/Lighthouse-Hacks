@@ -1,0 +1,9 @@
+{% if message %}
+        <p>
+            <div class="HeadingContainer">
+                <div class="Heading">
+                    {{ message }}
+                </div>
+            </div>
+        </p>
+    {% endif %}
