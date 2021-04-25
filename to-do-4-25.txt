@@ -1,7 +1,7 @@
-1. sign in button
+1. sign in button - DONE
 2. Form -> firebase hosting
 3. JS + Firebase for creating elements from posting
-4. New post button
+4. New post button - DONE
 5. Integrate together
 ----------------------10:30
 6. Build LSTM
