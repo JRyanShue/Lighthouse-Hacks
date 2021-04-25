@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="header">
+      <button class="sign_in">
+        Sign in
+      </button>
+      <img src="{{ url_for('static', filename='Heading.png') }}" alt="Campus Bulletin Board" class="top_image">
+    </div>
+    <div class="row menu">
+      <div class="menu_buttons">
+        <div class="col-lg-3 menu_1">
+          <a href="{{ url_for('announcements') }}">
+            <h2>
+              Announcements
+            </h2>
+          </a>
+        </div>
+        <div class="col-lg-3 menu_2">
+          <a href="{{ url_for('clubs') }}">
+            <h2>
+              Clubs
+            </h2>
+          </a>
+        </div>
+        <div class="col-lg-3 menu_3">
+          <a href="Petitions.html">
+            <h2>
+            Petitions
+          </h2>
+          </a>
+        </div>
+        <div class="col-lg-3 menu_4">
+          <a href="{{ url_for('surveys') }}">
+            <h2>
+              Surveys
+            </h2>
+          </a>
+        </div>
+      </div>
+      <hr class="menu_break">
+    </div>
+</body>
+</html>

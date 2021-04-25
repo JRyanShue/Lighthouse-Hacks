@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>
+    Announcements 
+  </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+</head>
+<body>
+  <div class="header">
+    <button class="sign_in">
+      Sign in
+    </button>
+    <img src="{{ url_for('static', filename='Heading.png') }}" alt="Campus Bulletin Board" class="top_image">
+  </div>
+  <div class="row menu">
+      <div class="menu_buttons">
+        <div class="col-lg-3 menu_1">
+          <a href="{{ url_for('announcements') }}">
+            <h2>
+              Announcements
+            </h2>
+          </a>
+        </div>
+        <div class="col-lg-3 menu_2">
+          <a href="{{ url_for('clubs') }}">
+            <h2>
+              Clubs
+            </h2>
+          </a>
+        </div>
+        <div class="col-lg-3 menu_3">
+          <a href="{{ url_for('petitionspage') }}">
+            <h2>
+            Petitions
+          </h2>
+          </a>
+        </div>
+        <div class="col-lg-3 menu_4">
+          <a href="{{ url_for('surveys') }}">
+            <h2>
+              Surveys
+            </h2>
+          </a>
+        </div>
+      </div>
+    <hr class="menu_break">
+  </div>
+  <div>
+    <button class = "new_post">
+      <strong class = "plus_sign">
+        +
+      </strong>
+      <p class="new_post_text">
+        New Post
+      </p>
+    </button>
+  </div>
+  <div class="container columns">
+    <div class="row">
+      <div class="col-lg-6 text_box left_column">
+        <p class = "sender"> Todd Bland - 10 minutes ago</p>
+        <h3>
+          Back to School
+        </h3>
+        <p class="first_row">
+          Dear students,
+        </p>
+        <p>
+          In your return to school you will need 2 pencils, an eraser, and maximum effort.
+        </p>
+        <p>
+          Thank you,
+        </p>
+        <p>
+          Mr. Bland
+        </p>
+        <input placeholder="Reply..." class="reply">
+      </div>
+      <div class="col-lg-6 text_box right_column">
+        <h3>
+          Column 3
+        </h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit...
+        </p>
+        <p>
+          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
