@@ -79,19 +79,21 @@ input:focus {
   border-style: none;
   background-color: #F2BA66;
   border-radius: 7%/20%;
-  margin-left: 84.7%;
+  margin-left: 83.1%;
   z-index: 94;
   width: 7.5%;
   margin-top: 0.9%;
+  height: 25px;
 }
 .plus_sign{
   z-index: 95;
   display: inline-block;
-  margin-top: -0.11%;
+  margin-top: -0.05%;
   position: absolute;
 }
 .new_post_text{
   display: inline-block;
   margin-left: 15%;
+  margin-top: 1.5%;
   z-index: 94;
 }
