@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+
+        {% extends "petitions.html" %}
+        {% block content %}
+
+        <!--  Messages based on input  -->
+        {% if message %}
+            <p>
+                <div class="HeadingContainer">
+                    <div class="Heading">
+                        {{ message }}
+                    </div>
+                </div>
+            </p>
+        {% endif %}
+
+        <form action="" method="post">
+            <p>
+                <div class="FormText">
+                    <label for="name">Petition name:</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="FormText">
+                    <label for="author">Your name:</label>
+                    <input type="text" name="author">
+                </div>
+                <div class="FormText">
+                    <label for="link">Petition link:</label>
+                    <input type="text" name="link">
+                </div>
+                <div class="FormText">
+                    <label for="content">Petition description:</label>
+                    <input type="text" name="content">
+                </div>
+                <div class="stylebutton">
+                    <input type="submit">
+                </div>
+            </p>
+        </form>
+        {% endblock %}
+    </body>
+</html>
