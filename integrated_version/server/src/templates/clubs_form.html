@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+
+<!--        {% extends "petitions.html" %}-->
+<!--        {% block content %}-->
+
+        <!--  Messages based on input  -->
+        {% if message %}
+            <p>
+                <div class="HeadingContainer">
+                    <div class="Heading">
+                        {{ message }}
+                    </div>
+                </div>
+            </p>
+        {% endif %}
+
+        <form action="" method="post">
+            <p>
+                <div class="FormText">
+                    <label for="name">Club announcement:</label>
+                    <input type="text" name="name">
+                </div>
+                <div class="FormText">
+                    <label for="author">Your name:</label>
+                    <input type="text" name="author">
+                </div>
+                <div class="FormText">
+                    <label for="details">Details:</label>
+                    <input type="text" name="details">
+                </div>
+                <div class="stylebutton">
+                    <input type="submit">
+                </div>
+
+                <a href="{{ url_for('clubs') }}">
+                    <h2>
+                        All Club Announcements
+                    </h2>
+                </a>
+
+            </p>
+        </form>
+<!--        {% endblock %}-->
+    </body>
+</html>

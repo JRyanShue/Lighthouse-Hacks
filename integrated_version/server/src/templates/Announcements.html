@@ -51,47 +51,42 @@
     <hr class="menu_break">
   </div>
   <div>
-    <button class = "new_post">
-      <strong class = "plus_sign">
-        +
-      </strong>
-      <p class="new_post_text">
-        New Post
-      </p>
-    </button>
+    <a href="{{ url_for('announcements_form') }}">
+      <button class = "new_post">
+        <strong class = "plus_sign">
+          +
+        </strong>
+        <p class="new_post_text">
+          New Post
+        </p>
+      </button>
+    </a>
   </div>
   <div class="container columns">
     <div class="row">
-      <div class="col-lg-6 text_box left_column">
-        <p class = "sender"> Todd Bland - 10 minutes ago</p>
-        <h3>
-          Back to School
-        </h3>
-        <p class="first_row">
-          Dear students,
-        </p>
-        <p>
-          In your return to school you will need 2 pencils, an eraser, and maximum effort.
-        </p>
-        <p>
-          Thank you,
-        </p>
-        <p>
-          Mr. Bland
-        </p>
-        <input placeholder="Reply..." class="reply">
-      </div>
-      <div class="col-lg-6 text_box right_column">
-        <h3>
-          Column 3
-        </h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit...
-        </p>
-        <p>
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...
-        </p>
-      </div>
+      <!--    Cycle through each club given from the database    -->
+        {% for l in data %}
+          <div class="col-lg-6 text_box left_column">
+<!--        Heading: announcement name    -->
+            <h3>{{l['Announcement']}}</h3>
+<!--        Author    -->
+            <p>
+              Posted by
+              {{l['Author']}}
+            </p>
+            <br>
+            <p>
+              Details:
+              {{l['Details']}}
+            </p>
+            <br>
+            <p>
+              Posted
+              {{l['Timestamp']}}
+            </p>
+
+          </div>
+        {% endfor %}
     </div>
   </div>
 </body>

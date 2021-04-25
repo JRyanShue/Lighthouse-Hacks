@@ -32,6 +32,10 @@ db = firebase.database()
 # users = db.child("data").child("petitions").get()
 # print(users.val())
 
+# db.child("data").child("announcements").update({"name": "Help Zoe"})
+# db.child("data").child("clubs").update({"name": "Help Zoe"})
+# db.child("data").child("surveys").update({"name": "Help Zoe"})
+
 app = Flask(__name__)
 
 # @app.route('/login/', methods=['post', 'get'])
@@ -89,6 +93,96 @@ def petition_form():
     return render_template("petition_form.html", message=message)
 
 
+@app.route('/announcements_form', methods=["GET", "POST"])
+def announcements_form():
+    print("yes1")
+    message = ''
+    if request.method == 'POST':
+        name = request.form.get('name')  # access data from form
+        author = request.form.get('author')
+        details = request.form.get('details')
+        timestamp = time.ctime(time.time())
+
+        if name and author and details:
+            # push to firebase
+            db.child("data").child("announcements").push(
+                {"Timestamp": timestamp, "Announcement": name, "Author": author, "Details": details})
+
+            message = "Success"
+        else:
+            if not name:
+                message += "Please enter an announcement."
+            if not author:
+                message += "\nPlease enter an author name."
+            if not details:
+                message += "\nPlease enter announcement details."
+
+        print("announcement")
+    # return button()
+    return render_template("announcements_form.html", message=message)
+
+
+@app.route('/clubs_form', methods=["GET", "POST"])
+def clubs_form():
+    print("yes2")
+    message = ''
+    if request.method == 'POST':
+        name = request.form.get('name')  # access data from form
+        author = request.form.get('author')
+        details = request.form.get('details')
+        timestamp = time.ctime(time.time())
+
+        if name and author and details:
+            # push to firebase
+            db.child("data").child("clubs").push(
+                {"Timestamp": timestamp, "Club Announcement": name, "Author": author, "Details": details})
+
+            message = "Success"
+        else:
+            if not name:
+                message += "Please enter a club announcement."
+            if not author:
+                message += "\nPlease enter an author name."
+            if not details:
+                message += "\nPlease enter announcement details."
+
+        print("club")
+    # return button()
+    return render_template("clubs_form.html", message=message)
+
+
+@app.route('/surveys_form', methods=["GET", "POST"])
+def surveys_form():
+    print("yes3")
+    message = ''
+    if request.method == 'POST':
+        name = request.form.get('name')  # access data from form
+        author = request.form.get('author')
+        details = request.form.get('details')
+        link = request.form.get('link')
+        timestamp = time.ctime(time.time())
+
+        if name and author and details and link:
+            # push to firebase
+            db.child("data").child("surveys").push(
+                {"Timestamp": timestamp, "Survey": name, "Link": link, "Author": author, "Details": details})
+
+            message = "Success"
+        else:
+            if not name:
+                message += "Please enter a survey name."
+            if not author:
+                message += "\nPlease enter an author name."
+            if not details:
+                message += "\nPlease enter survey details."
+            if not link:
+                message += "\nPlease enter a link to your survey."
+
+        print("survey")
+    # return button()
+    return render_template("surveys_form.html", message=message)
+
+
 @app.route('/home', methods=["GET", "POST"])
 def home():
     # sample()
@@ -118,25 +212,30 @@ def test():
 
 @app.route('/announcements')
 def announcements():
-    return render_template("Announcements.html")
+    announcements_all = db.child("data").child("announcements").get()
+    announcements_data = announcements_all.val()
+    return render_template("Announcements.html", data=announcements_data.values())
 
 
 @app.route('/clubs')
 def clubs():
-    return render_template("Clubs.html")
+    all_clubs = db.child("data").child("clubs").get()
+    clubs_data = all_clubs.val()
+    return render_template("Clubs.html", data=clubs_data.values())
 
 
 @app.route('/petitionspage')
 def petitionspage():
     all_petitions = db.child("data").child("petitions").get()
     petitions = all_petitions.val()
-    print(petitions.values())
     return render_template("PetitionsPage.html", data=petitions.values())  # pass petition data to the HTML page django
 
 
 @app.route('/surveys')
 def surveys():
-    return render_template("Surveys.html")
+    all_surveys = db.child("data").child("surveys").get()
+    surveys_data = all_surveys.val()
+    return render_template("Surveys.html", data=surveys_data.values())
 
 
 app.run(host='0.0.0.0', port=5000)

@@ -51,27 +51,42 @@
       <hr class="menu_break">
     </div>
     <div>
-      <button class = "new_post">
-        <strong class = "plus_sign">
-          +
-        </strong>
-        <p class="new_post_text">
-          New Post
-        </p>
-      </button>
+      <a href="{{ url_for('clubs_form') }}">
+        <button class = "new_post">
+          <strong class = "plus_sign">
+            +
+          </strong>
+          <p class="new_post_text">
+            New Post
+          </p>
+        </button>
+      </a>
     </div>
     <div class="container columns">
       <div class="row">
-        <div class="col-lg-6 text_box left_column">
-          <h3>Column 2</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        </div>
-        <div class="col-lg-6 text_box right_column">
-          <h3>Column 3</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-        </div>
+<!--    Cycle through each club given from the database    -->
+        {% for l in data %}
+          <div class="col-lg-6 text_box left_column">
+<!--        Heading: club name    -->
+            <h3>{{l['Club Announcement']}}</h3>
+<!--        Author    -->
+            <p>
+              Posted by
+              {{l['Author']}}
+            </p>
+            <br>
+            <p>
+              Details:
+              {{l['Details']}}
+            </p>
+            <br>
+            <p>
+              Posted
+              {{l['Timestamp']}}
+            </p>
+
+          </div>
+        {% endfor %}
       </div>
     </div>
   </body>
