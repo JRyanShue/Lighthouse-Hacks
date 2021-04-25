@@ -68,7 +68,7 @@ def petition_form():
             db.child("data").child("petitions").push(
                 {"Timestamp": timestamp, "Petition": name, "Author": author, "Link": link, "Content": content})
 
-            message = "Petition created!"
+            message = "Success"
         else:
             if not name:
                 message += "Please enter a petition name."
