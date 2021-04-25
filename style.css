@@ -24,6 +24,7 @@ a:hover{
   position: sticky;
   z-index: 99;
   padding-bottom: -1%;
+  background-color: white;
 }
 .menu_break{
   border-style: solid;
