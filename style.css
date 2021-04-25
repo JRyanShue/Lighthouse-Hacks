@@ -54,7 +54,43 @@ a:hover{
   border-style: hidden;
   margin-bottom: 3%;
   padding-bottom: 2%;
+  border-radius: 6%/30%;
 }
 input:focus {
-    outline:none;
+  outline:none;
+}
+.first_row{
+  margin-top: -1%;
+}
+.sign_in{
+  border-style: none;
+  margin-left: 93%;
+  position: absolute;
+  margin-top: 2.1%;
+  background-color: #F2BA66;
+  border-radius: 11%/30%;
+}
+.header{
+}
+.top_image{
+  height: 131px;
+  margin-top: -3%;
+}
+.new_post{
+  border-style: none;
+  background-color: #F2BA66;
+  border-radius: 7%/20%;
+  margin-left: 84.7%;
+  z-index: 94;
+  width: 7.5%;
+}
+.plus_sign{
+  z-index: 95;
+  display: inline-block;
+  position: absolute;
+  margin-top: -0.1%;
+}
+.new_post_text{
+  display: inline-block;
+  margin-left: 15%;
 }
