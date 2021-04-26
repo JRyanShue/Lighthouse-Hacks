@@ -2,15 +2,31 @@
   margin-top: 2.5%;
   background-color: powderblue;
   overflow: visible;
-  margin-bottom: 200%;
+  margin-bottom: 0%;
   border-radius: 4%/10%;
 }
-.left_column{
-  margin-left: -2%;
+.text_box2{
+  margin-top: 2.5%;
+  background-color: rgb(255, 143, 143);
+  overflow: visible;
+  margin-bottom: 0%;
+  border-radius: 4%/10%;
 }
-.right_column{
-  margin-left: 2%;
+.text_box3{
+  margin-top: 2.5%;
+  background-color: rgb(192, 236, 111);
+  overflow: visible;
+  margin-bottom: 0%;
+  border-radius: 4%/10%;
 }
+.text_box4{
+  margin-top: 2.5%;
+  background-color: rgb(199, 102, 199);
+  overflow: visible;
+  margin-bottom: 0%;
+  border-radius: 4%/10%;
+}
+
 a{
   color: black;
 }
@@ -96,4 +112,32 @@ input:focus {
   margin-left: 15%;
   margin-top: 1.5%;
   z-index: 94;
+}
+
+.pimg{
+
+    height:100%;
+    margin: 0px;
+    font-size:16px;
+    font-family:"Lato", sans-serif;
+    font-weight: 400;
+    line-height: 1.8em;
+    color:#666;
+    padding: 0px;
+}
+
+.inputs{
+  margin-left: 10%;
+  margin-bottom: 10%;
+  font-size: 110%;
+}
+.text_box1{
+  border-radius: 10%/30%;
+  border-style: solid;
+  margin-bottom: 2%;
+}
+.submit_button{
+  background-color: powderblue;
+  border-style: none;
+  border-radius: 10%/20%;
 }

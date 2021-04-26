@@ -26,20 +26,21 @@
 
         <form action="" method="post">
             <p>
+            <form method="post" class = "inputs">
                 <div class="FormText">
                     <label for="name">Announcement:</label>
-                    <input type="text" name="name">
+                    <input type="text" name="name" class = "text_box1">
                 </div>
                 <div class="FormText">
                     <label for="author">Your name:</label>
-                    <input type="text" name="author">
+                    <input type="text" name="author" class = "text_box1">
                 </div>
                 <div class="FormText">
                     <label for="details">Details:</label>
-                    <input type="text" name="details">
+                    <input type="text" name="details" class = "text_box1">
                 </div>
                 <div class="stylebutton">
-                    <input type="submit">
+                    <input type="submit" class = "submit_button">
                 </div>
 
                 <a href="{{ url_for('announcements') }}">
@@ -47,7 +48,7 @@
                         All Announcements
                     </h2>
                 </a>
-
+                 </form>
             </p>
         </form>
 <!--        {% endblock %}-->

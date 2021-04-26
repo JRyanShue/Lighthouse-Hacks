@@ -238,4 +238,9 @@ def surveys():
     return render_template("Surveys.html", data=surveys_data.values())
 
 
+@app.route('/sign_in')
+def sign_in():
+    return render_template("SignInPage.html")
+
+
 app.run(host='0.0.0.0', port=5000)
